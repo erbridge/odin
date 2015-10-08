@@ -1,0 +1,9 @@
+{{#link-to 'characters.new'}}new{{/link-to}}
+
+{{#each model as |character|}}
+
+  {{#link-to 'characters.edit' character}}{{character.id}}{{/link-to}}
+
+{{/each}}
+
+{{outlet}}

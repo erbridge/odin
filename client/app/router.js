@@ -6,6 +6,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('characters', function() {
+    this.route('new');
+    this.route('edit', { path: ':character_id'});
+  });
 });
 
 export default Router;
