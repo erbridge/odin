@@ -6,6 +6,17 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' localhost:1337",
+      'font-src': "'self'",
+      'connect-src': "'self' localhost:1337 ws://localhost:1337",
+      'img-src': "'self'",
+      'style-src': "'self'",
+      'media-src': "'self'"
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -14,8 +25,9 @@ module.exports = function(environment) {
     },
 
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      emberDataSails:  {
+        host: '//localhost:1337'
+      }
     }
   };
 
@@ -25,6 +37,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.contentSecurityPolicy['script-src'] += " 'unsafe-inline'";
+    ENV.contentSecurityPolicy['style-src'] += " 'unsafe-inline'";
   }
 
   if (environment === 'test') {
