@@ -1,29 +1,4 @@
-<div class='name'><label>name: {{input type='text' value=character.name}}</label></div>
-
-<div class='age'><label>age: {{input type='number' value=character.age}}</label></div>
-
-<div class='gender'><label>gender: {{input type='text' value=character.gender}}</label></div>
-
-<div class='handedness'><label>handedness: {{input type='text' value=character.handedness}}</label></div>
-
-<div class='frame'><label>frame: {{input type='text' value=character.frame}}</label></div>
-
-<div class='height'><label>height: {{input type='number' value=character.height}}</label></div>
-
-<div class='weight'><label>weight: {{input type='number' value=character.weight}}</label></div>
-
-<div class='str'><label>str: {{input type='number' value=character.str}}</label></div>
-
-<div class='con'><label>con: {{input type='number' value=character.con}}</label></div>
-
-<div class='siz'><label>siz: {{input type='number' value=character.siz}}</label></div>
-
-<div class='dex'><label>dex: {{input type='number' value=character.dex}}</label></div>
-
-<div class='int'><label>int: {{input type='number' value=character.int}}</label></div>
-
-<div class='pow'><label>pow: {{input type='number' value=character.pow}}</label></div>
-
-<div class='cha'><label>cha: {{input type='number' value=character.cha}}</label></div>
+{{character-sheet-description character=character}}
+{{character-sheet-characteristics character=character}}
 
 <div class='notes'><label>notes: {{textarea value=character.notes}}</label></div>
