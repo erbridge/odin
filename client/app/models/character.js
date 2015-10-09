@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
@@ -12,13 +13,23 @@ export default DS.Model.extend({
   height: DS.attr('number'),
   weight: DS.attr('number'),
 
-  str: DS.attr('number'),
-  con: DS.attr('number'),
-  siz: DS.attr('number'),
-  dex: DS.attr('number'),
-  int: DS.attr('number'),
-  pow: DS.attr('number'),
-  cha: DS.attr('number'),
+  homeland: DS.attr('string'),
 
-  notes: DS.attr('string')
+  strength:     DS.attr('number'),
+  constitution: DS.attr('number'),
+  size:         DS.attr('number'),
+  dexterity:    DS.attr('number'),
+  intelligence: DS.attr('number'),
+  power:        DS.attr('number'),
+  charisma:     DS.attr('number'),
+
+  notes: DS.attr('string'),
+
+  actionPoints: Ember.computed('intelligence', 'dexterity', function() {
+    const intelligence = parseInt(this.get('intelligence') || 0);
+    const dexterity    = parseInt(this.get('dexterity') || 0);
+    const actionPoints = Math.ceil((intelligence + dexterity) / 12);
+
+    return Math.max(actionPoints, 1);
+  })
 });
