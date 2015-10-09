@@ -67,5 +67,60 @@ export default DS.Model.extend({
     const damageModifierIdx = Math.max(Math.ceil((strength + size) / 5) - 1, 0);
 
     return DAMAGE_MODIFIERS[damageModifierIdx];
-  })
+  }),
+
+  experienceModifier: Ember.computed('charisma', function() {
+    const charisma           = parseInt(this.get('charisma') || 0);
+    const experienceModifier = Math.ceil(charisma / 6) - 2;
+
+    return Math.max(experienceModifier, -1);
+  }),
+
+  healingRate: Ember.computed('constitution', function() {
+    const constitution = parseInt(this.get('constitution') || 0);
+    const healingRate  = Math.ceil(constitution / 6);
+
+    return Math.max(healingRate, 1);
+  }),
+
+  maxHitPointCategory: Ember.computed('constitution', 'size', function() {
+    const constitution = parseInt(this.get('constitution') || 0);
+    const size         = parseInt(this.get('size') || 0);
+
+    return Math.ceil((constitution + size) / 5);
+  }),
+
+  maxHeadHitPoints: Ember.computed('maxHitPointCategory', function() {
+    const category = this.get('maxHitPointCategory');
+
+    return Math.max(category, 1);
+  }),
+
+  maxChestHitPoints: Ember.computed('maxHitPointCategory', function() {
+    const category = this.get('maxHitPointCategory');
+
+    return Math.max(category + 2, 1);
+  }),
+
+  maxAbdomenHitPoints: Ember.computed('maxHitPointCategory', function() {
+    const category = this.get('maxHitPointCategory');
+
+    return Math.max(category + 1, 1);
+  }),
+
+  maxLeftArmHitPoints: Ember.computed('maxHitPointCategory', function() {
+    const category = this.get('maxHitPointCategory');
+
+    return Math.max(category - 1, 1);
+  }),
+
+  maxRightArmHitPoints: Ember.computed.alias('maxLeftArmHitPoints'),
+
+  maxLeftLegHitPoints: Ember.computed('maxHitPointCategory', function() {
+    const category = this.get('maxHitPointCategory');
+
+    return Math.max(category, 1);
+  }),
+
+  maxRightLegHitPoints: Ember.computed.alias('maxLeftLegHitPoints')
 });
