@@ -20,13 +20,5 @@ export default DS.Model.extend({
   pow: DS.attr('number'),
   cha: DS.attr('number'),
 
-  fatigueLevel: DS.attr('number', {
-    defaultValue: 0,
-  }),
-
-  experienceRolls: DS.attr('number', {
-    defaultValue: 0,
-  }),
-
   notes: DS.attr('string')
 });
