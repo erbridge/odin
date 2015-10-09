@@ -43,13 +43,13 @@ export default DS.Model.extend({
 
   homeland: DS.attr('string'),
 
-  strength:     DS.attr('number'),
-  constitution: DS.attr('number'),
-  size:         DS.attr('number'),
-  dexterity:    DS.attr('number'),
-  intelligence: DS.attr('number'),
-  power:        DS.attr('number'),
-  charisma:     DS.attr('number'),
+  strength:     DS.attr('number', { defaultValue: 1 }),
+  constitution: DS.attr('number', { defaultValue: 1 }),
+  size:         DS.attr('number', { defaultValue: 1 }),
+  dexterity:    DS.attr('number', { defaultValue: 1 }),
+  intelligence: DS.attr('number', { defaultValue: 1 }),
+  power:        DS.attr('number', { defaultValue: 1 }),
+  charisma:     DS.attr('number', { defaultValue: 1 }),
 
   notes: DS.attr('string'),
 
