@@ -53,12 +53,19 @@ export default DS.Model.extend({
 
   notes: DS.attr('string'),
 
-  actionPoints: Ember.computed('intelligence', 'dexterity', function() {
-    const intelligence = parseInt(this.get('intelligence') || 0);
+  actionPoints: Ember.computed('dexterity', 'intelligence', function() {
     const dexterity    = parseInt(this.get('dexterity') || 0);
+    const intelligence = parseInt(this.get('intelligence') || 0);
     const actionPoints = Math.ceil((intelligence + dexterity) / 12);
 
     return Math.max(actionPoints, 1);
+  }),
+
+  strikeRank: Ember.computed('dexterity', 'intelligence', function() {
+    const dexterity    = parseInt(this.get('dexterity') || 0);
+    const intelligence = parseInt(this.get('intelligence') || 0);
+
+    return Math.ceil((intelligence + dexterity) / 2);
   }),
 
   damageModifier: Ember.computed('strength', 'size', function() {
@@ -82,6 +89,15 @@ export default DS.Model.extend({
 
     return Math.max(healingRate, 1);
   }),
+
+  maxLuckPoints: Ember.computed('power', function() {
+    const power      = parseInt(this.get('power') || 0);
+    const luckPoints = Math.ceil(power / 6);
+
+    return Math.max(luckPoints, 1);
+  }),
+
+  maxMagicPoints: Ember.computed.alias('power'),
 
   maxHitPointCategory: Ember.computed('constitution', 'size', function() {
     const constitution = parseInt(this.get('constitution') || 0);
