@@ -46,6 +46,7 @@ export default DS.Model.extend({
   homeland:    DS.attr('string'),
   socialClass: DS.belongsTo('social-class'),
   title:       DS.attr('string'),
+  career:      DS.belongsTo('career'),
 
   strength:     DS.attr('number', { defaultValue: 1 }),
   constitution: DS.attr('number', { defaultValue: 1 }),
