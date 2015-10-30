@@ -51,6 +51,9 @@ export default DS.Model.extend({
   power:        DS.attr('number', { defaultValue: 1 }),
   charisma:     DS.attr('number', { defaultValue: 1 }),
 
+  skills:       DS.hasMany('skill'),
+  combatStyles: DS.hasMany('combat-style'),
+
   notes: DS.attr('string'),
 
   actionPoints: Ember.computed('dexterity', 'intelligence', function() {
