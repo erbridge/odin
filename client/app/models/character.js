@@ -41,9 +41,11 @@ export default DS.Model.extend({
   height: DS.attr('number'),
   weight: DS.attr('number'),
 
-  race:     DS.belongsTo('race'),
-  culture:  DS.belongsTo('culture'),
-  homeland: DS.attr('string'),
+  race:        DS.belongsTo('race'),
+  culture:     DS.belongsTo('culture'),
+  homeland:    DS.attr('string'),
+  socialClass: DS.belongsTo('social-class'),
+  title:       DS.attr('string'),
 
   strength:     DS.attr('number', { defaultValue: 1 }),
   constitution: DS.attr('number', { defaultValue: 1 }),
