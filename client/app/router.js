@@ -10,6 +10,11 @@ Router.map(function() {
     this.route('new');
     this.route('edit', { path: ':character_id'});
   });
+
+  this.route('rule-sets', {}, function() {
+    this.route('new', {});
+    this.route('edit', { path: ':rule_set_id'});
+  });
 });
 
 export default Router;
