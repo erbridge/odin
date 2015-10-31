@@ -1,6 +1,6 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('base-skill', 'Unit | Model | base skill', {
+moduleForModel('skill-definition', 'Unit | Model | skill definition', {
   // Specify the other units that are required for this test.
   needs: []
 });

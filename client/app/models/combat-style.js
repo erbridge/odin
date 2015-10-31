@@ -1,5 +1,7 @@
-import CharacterSkillModelMixin from './mixins/character-skill-model';
+import DS from 'ember-data';
 
-import BaseCombatStyle from './base-combat-style';
+import Skill from './skill';
 
-export default BaseCombatStyle.extend(CharacterSkillModelMixin);
+export default Skill.extend({
+  definition: DS.belongsTo('combat-style-definition')
+});

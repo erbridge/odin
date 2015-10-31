@@ -1,6 +1,6 @@
 import { moduleForModel, test } from 'ember-qunit';
 
-moduleForModel('base-combat-style', 'Unit | Model | base combat style', {
+moduleForModel('combat-style-definition', 'Unit | Model | combat style definition', {
   // Specify the other units that are required for this test.
   needs: []
 });
