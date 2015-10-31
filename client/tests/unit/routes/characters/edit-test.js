@@ -1,11 +1,21 @@
-import { moduleFor, test } from 'ember-qunit';
+/* jshint expr:true */
+import { expect } from 'chai';
+import {
+  describeModule,
+  it
+} from 'ember-mocha';
 
-moduleFor('route:character/edit', 'Unit | Route | character/edit', {
-  // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
-});
-
-test('it exists', function(assert) {
-  var route = this.subject();
-  assert.ok(route);
-});
+describeModule(
+  'route:characters/edit',
+  'CharactersEditRoute',
+  {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  },
+  function() {
+    it('exists', function() {
+      var route = this.subject();
+      expect(route).to.be.ok;
+    });
+  }
+);

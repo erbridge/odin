@@ -1,26 +1,30 @@
-import { moduleForComponent, test } from 'ember-qunit';
+/* jshint expr:true */
+import { expect } from 'chai';
+import {
+  describeComponent,
+  it
+} from 'ember-mocha';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('character-sheet', 'Integration | Component | character sheet', {
-  integration: true
-});
+describeComponent(
+  'character-sheet',
+  'Integration: CharacterSheetComponent',
+  {
+    integration: true
+  },
+  function() {
+    it('renders', function() {
+      // Set any properties with this.set('myProperty', 'value');
+      // Handle any actions with this.on('myAction', function(val) { ... });
+      // Template block usage:
+      // this.render(hbs`
+      //   {{#character-sheet}}
+      //     template content
+      //   {{/character-sheet}}
+      // `);
 
-test('it renders', function(assert) {
-  assert.expect(2);
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{character-sheet}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#character-sheet}}
-      template block text
-    {{/character-sheet}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
-});
+      this.render(hbs`{{character-sheet}}`);
+      expect(this.$()).to.have.length(1);
+    });
+  }
+);

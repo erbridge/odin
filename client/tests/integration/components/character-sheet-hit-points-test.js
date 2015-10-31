@@ -1,26 +1,30 @@
-import { moduleForComponent, test } from 'ember-qunit';
+/* jshint expr:true */
+import { expect } from 'chai';
+import {
+  describeComponent,
+  it
+} from 'ember-mocha';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('character-sheet-hit-points', 'Integration | Component | character sheet hit points', {
-  integration: true
-});
+describeComponent(
+  'character-sheet-hit-points',
+  'Integration: CharacterSheetHitPointsComponent',
+  {
+    integration: true
+  },
+  function() {
+    it('renders', function() {
+      // Set any properties with this.set('myProperty', 'value');
+      // Handle any actions with this.on('myAction', function(val) { ... });
+      // Template block usage:
+      // this.render(hbs`
+      //   {{#character-sheet-hit-points}}
+      //     template content
+      //   {{/character-sheet-hit-points}}
+      // `);
 
-test('it renders', function(assert) {
-  assert.expect(2);
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{character-sheet-hit-points}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#character-sheet-hit-points}}
-      template block text
-    {{/character-sheet-hit-points}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
-});
+      this.render(hbs`{{character-sheet-hit-points}}`);
+      expect(this.$()).to.have.length(1);
+    });
+  }
+);
