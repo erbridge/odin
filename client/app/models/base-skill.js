@@ -3,7 +3,7 @@ import DS from 'ember-data';
 
 const TYPES = [
   'standard',
-  'advanced',
+  'professional',
   'combat',
   'passion',
   'language'
