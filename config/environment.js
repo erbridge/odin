@@ -2,16 +2,17 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'client',
+    modulePrefix: 'odin',
     environment: environment,
+    firebase: 'https://odin.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
 
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' localhost:1337",
+      'script-src': "'self'",
       'font-src': "'self'",
-      'connect-src': "'self' localhost:1337 ws://localhost:1337",
+      'connect-src': "'self' wss://*.firebaseio.com",
       'img-src': "'self'",
       'style-src': "'self'",
       'media-src': "'self'"
@@ -25,9 +26,8 @@ module.exports = function(environment) {
     },
 
     APP: {
-      emberDataSails:  {
-        host: '//localhost:1337'
-      }
+      // Here you can pass flags/options to your application instance
+      // when it is created
     }
   };
 
@@ -39,7 +39,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     ENV.contentSecurityPolicy['script-src'] += " 'unsafe-inline'";
-    ENV.contentSecurityPolicy['style-src'] += " 'unsafe-inline'";
+    ENV.contentSecurityPolicy['style-src']  += " 'unsafe-inline'";
   }
 
   if (environment === 'test') {
