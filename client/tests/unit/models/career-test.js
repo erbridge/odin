@@ -10,7 +10,10 @@ describeModel(
   'Career',
   {
     // Specify the other units that are required for this test.
-    
+    needs: [
+      'model:combat-style-definition',
+      'model:skill-definition'
+    ]
   },
   function() {
     // Replace this with your real tests.

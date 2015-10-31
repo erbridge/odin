@@ -10,7 +10,10 @@ describeModel(
   'CombatStyle',
   {
     // Specify the other units that are required for this test.
-    
+    needs: [
+      'model:character',
+      'model:combat-style-definition'
+    ]
   },
   function() {
     // Replace this with your real tests.

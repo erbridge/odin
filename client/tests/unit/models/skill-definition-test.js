@@ -10,7 +10,7 @@ describeModel(
   'SkillDefinition',
   {
     // Specify the other units that are required for this test.
-    
+
   },
   function() {
     // Replace this with your real tests.

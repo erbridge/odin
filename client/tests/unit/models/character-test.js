@@ -10,7 +10,14 @@ describeModel(
   'Character',
   {
     // Specify the other units that are required for this test.
-    
+    needs: [
+      'model:career',
+      'model:combat-style',
+      'model:culture',
+      'model:race',
+      'model:skill',
+      'model:social-class'
+    ]
   },
   function() {
     // Replace this with your real tests.

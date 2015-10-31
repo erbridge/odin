@@ -3,7 +3,9 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   definition: DS.belongsTo('skill-definition'),
-  character:  DS.belongsTo('character'),
+  character:  DS.belongsTo('character', {
+    inverse: 'skills'
+  }),
 
   cultureBonus:     DS.attr('number'),
   careerBonus:      DS.attr('number'),
