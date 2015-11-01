@@ -1,10 +1,10 @@
-{{#each skills as |skill|}}
+{{#each model as |skill|}}
 
   <div class='skill'>
 
     {{#if editable}}
 
-      {{#link-to 'skills.edit' skill}}{{skill.name}}{{/link-to}}
+      {{#link-to 'model.edit' skill}}{{skill.name}}{{/link-to}}
 
     {{else}}
 
