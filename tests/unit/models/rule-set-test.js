@@ -10,7 +10,13 @@ describeModel(
   'RuleSet',
   {
     // Specify the other units that are required for this test.
-    
+    needs: [
+      'model:career',
+      'model:culture',
+      'model:combat-style-definition',
+      'model:race',
+      'model:skill-definition'
+    ]
   },
   function() {
     // Replace this with your real tests.
