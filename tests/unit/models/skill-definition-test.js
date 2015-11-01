@@ -10,7 +10,9 @@ describeModel(
   'SkillDefinition',
   {
     // Specify the other units that are required for this test.
-
+    needs: [
+      'model:rule-set'
+    ]
   },
   function() {
     // Replace this with your real tests.

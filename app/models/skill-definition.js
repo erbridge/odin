@@ -1,16 +1,15 @@
 import Ember from 'ember';
 import DS from 'ember-data';
 
-const TYPES = [
-  'standard',
-  'professional',
-  'combat',
-  'passion',
-  'language'
-];
+import SkillDefinitionMixin from '../mixins/skill-definition';
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
+export default DS.Model.extend(SkillDefinitionMixin, {
+  typeNames: [
+    'standard',
+    'professional',
+    'passion',
+    'language'
+  ],
 
   type: DS.attr('number'),
 
@@ -18,22 +17,15 @@ export default DS.Model.extend({
     get() {
       const type = this.get('type');
 
-      return TYPES[type];
+      return this.typeNames[type];
     },
 
     set(key, value) {
-      const type = TYPES.indexOf(value);
+      const type = this.typeNames.indexOf(value);
 
       this.set('type', type);
 
       return value;
     }
-  }),
-
-  characteristicA: DS.attr('string'),
-  characteristicB: DS.attr('string'),
-
-  baseBonus: DS.attr('number', { defaultValue: 0 }),
-
-  description: DS.attr('string')
+  })
 });

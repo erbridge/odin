@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
-import SkillDefinition from './skill-definition';
+import SkillDefinitionMixin from '../mixins/skill-definition';
 
-export default SkillDefinition.extend({
+export default DS.Model.extend(SkillDefinitionMixin, {
   weapons: DS.attr('string')
 });

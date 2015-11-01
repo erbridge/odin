@@ -1,10 +1,7 @@
 import DS from 'ember-data';
 
-import Skill from './skill';
+import SkillMixin from '../mixins/skill';
 
-export default Skill.extend({
-  definition: DS.belongsTo('combat-style-definition'),
-  character:  DS.belongsTo('character', {
-    inverse: 'combatStyles'
-  }),
+export default DS.Model.extend(SkillMixin, {
+  definition: DS.belongsTo('combat-style-definition')
 });
