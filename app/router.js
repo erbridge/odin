@@ -17,7 +17,6 @@ Router.map(function() {
   });
 
   this.route('skills', function() {
-    this.route('new', {});
     this.route('edit', { path: ':skill_id'});
   });
 });
