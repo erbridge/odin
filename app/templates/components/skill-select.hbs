@@ -1,0 +1,23 @@
+{{#each skills as |skill|}}
+
+  <div class='skill'>
+
+    {{#if editable}}
+
+      {{#link-to 'skills.edit' skill}}{{skill.name}}{{/link-to}}
+
+    {{else}}
+
+      {{skill.name}}
+
+    {{/if}}
+
+  </div>
+
+{{/each}}
+
+{{#if editable}}
+
+  <div class='skill'>{{#link-to 'skills.new'}}New{{/link-to}}</div>
+
+{{/if}}
