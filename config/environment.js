@@ -18,6 +18,11 @@ module.exports = function(environment) {
       'media-src': "'self'"
     },
 
+    pace: {
+      theme: 'flash',
+      color: 'purple'
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
