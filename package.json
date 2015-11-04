@@ -26,6 +26,6 @@
     "ember-disable-proxy-controllers": "^1.0.0",
     "ember-export-application-global": "^1.0.3",
     "emberfire": "1.6.0",
-    "emberx-select": "2.0.1"
+    "emberx-select": "2.0.2"
   }
 }
