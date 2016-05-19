@@ -1,0 +1,7 @@
+{{#each model as |skillDefinition|}}
+
+  {{#link-to 'skills.edit' skillDefinition}}{{skillDefinition.id}}{{/link-to}}
+
+{{/each}}
+
+{{outlet}}
