@@ -1,13 +1,14 @@
 import Ember from 'ember';
-import DS from 'ember-data';
+import attr from 'ember-data/attr';
+import { belongsTo } from 'ember-data/relationships';
 
 export default Ember.Mixin.create({
-  character: DS.belongsTo('character'),
+  character: belongsTo('character'),
 
-  cultureBonus:     DS.attr('number'),
-  careerBonus:      DS.attr('number'),
-  freeBonus:        DS.attr('number'),
-  improvementBonus: DS.attr('number', { defaultValue: 0 }),
+  cultureBonus:     attr('number'),
+  careerBonus:      attr('number'),
+  freeBonus:        attr('number'),
+  improvementBonus: attr('number', { defaultValue: 0 }),
 
   characteristicBonus: Ember.computed(
     'definition.characteristicA',

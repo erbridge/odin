@@ -10,8 +10,8 @@ import SkillMixin from 'odin/mixins/skill';
 describe('SkillMixin', function() {
   // Replace this with your real tests.
   it('works', function() {
-    var SkillObject = Ember.Object.extend(SkillMixin);
-    var subject = SkillObject.create();
+    let SkillObject = Ember.Object.extend(SkillMixin);
+    let subject = SkillObject.create();
     expect(subject).to.be.ok;
   });
 });

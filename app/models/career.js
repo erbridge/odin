@@ -1,10 +1,12 @@
-import DS from 'ember-data';
+import Model from 'ember-data/model';
+import attr from 'ember-data/attr';
+import { hasMany } from 'ember-data/relationships';
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
+export default Model.extend({
+  name: attr('string'),
 
-  skills:       DS.hasMany('skill-definition'),
-  combatStyles: DS.hasMany('combat-style-definition'),
+  skills:       hasMany('skill-definition'),
+  combatStyles: hasMany('combat-style-definition'),
 
-  description: DS.attr('string')
+  description: attr('string')
 });

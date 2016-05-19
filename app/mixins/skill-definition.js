@@ -1,15 +1,16 @@
 import Ember from 'ember';
-import DS from 'ember-data';
+import attr from 'ember-data/attr';
+import { belongsTo } from 'ember-data/relationships';
 
 export default Ember.Mixin.create({
-  ruleSet: DS.belongsTo('rule-set'),
+  ruleSet: belongsTo('rule-set'),
 
-  name: DS.attr('string'),
+  name: attr('string'),
 
-  characteristicA: DS.attr('string'),
-  characteristicB: DS.attr('string'),
+  characteristicA: attr('string'),
+  characteristicB: attr('string'),
 
-  baseBonus: DS.attr('number', { defaultValue: 0 }),
+  baseBonus: attr('number', { defaultValue: 0 }),
 
-  description: DS.attr('string')
+  description: attr('string')
 });

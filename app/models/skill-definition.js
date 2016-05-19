@@ -1,9 +1,10 @@
 import Ember from 'ember';
-import DS from 'ember-data';
+import Model from 'ember-data/model';
+import attr from 'ember-data/attr';
 
 import SkillDefinitionMixin from '../mixins/skill-definition';
 
-export default DS.Model.extend(SkillDefinitionMixin, {
+export default Model.extend(SkillDefinitionMixin, {
   typeNames: [
     'standard',
     'professional',
@@ -11,7 +12,7 @@ export default DS.Model.extend(SkillDefinitionMixin, {
     'language'
   ],
 
-  type: DS.attr('number'),
+  type: attr('number'),
 
   typeName: Ember.computed('type', {
     get() {

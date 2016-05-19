@@ -1,13 +1,14 @@
-import DS from 'ember-data';
+import Model from 'ember-data/model';
+import attr from 'ember-data/attr';
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
+export default Model.extend({
+  name: attr('string'),
 
-  strength:     DS.attr('string'),
-  constitution: DS.attr('string'),
-  size:         DS.attr('string'),
-  dexterity:    DS.attr('string'),
-  intelligence: DS.attr('string'),
-  power:        DS.attr('string'),
-  charisma:     DS.attr('string')
+  strength:     attr('string'),
+  constitution: attr('string'),
+  size:         attr('string'),
+  dexterity:    attr('string'),
+  intelligence: attr('string'),
+  power:        attr('string'),
+  charisma:     attr('string')
 });

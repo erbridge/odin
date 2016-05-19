@@ -1,10 +1,11 @@
-import DS from 'ember-data';
+import Model from 'ember-data/model';
+import attr from 'ember-data/attr';
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
+export default Model.extend({
+  name: attr('string'),
 
-  titles:        DS.attr('string'),
-  resources:     DS.attr('string'),
-  moneyModifier: DS.attr('number'),
-  description:   DS.attr('string')
+  titles:        attr('string'),
+  resources:     attr('string'),
+  moneyModifier: attr('number'),
+  description:   attr('string')
 });

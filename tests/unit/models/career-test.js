@@ -1,24 +1,21 @@
 /* jshint expr:true */
 import { expect } from 'chai';
-import {
-  describeModel,
-  it
-} from 'ember-mocha';
+import { describeModel, it } from 'ember-mocha';
 
 describeModel(
   'career',
-  'Career',
+  'Unit | Model | career',
   {
     // Specify the other units that are required for this test.
-    needs: [
-      'model:combat-style-definition',
-      'model:skill-definition'
-    ]
+      needs: [
+        'model:skill-definition',
+        'model:combat-style-definition'
+      ]
   },
   function() {
     // Replace this with your real tests.
     it('exists', function() {
-      var model = this.subject();
+      let model = this.subject();
       // var store = this.store();
       expect(model).to.be.ok;
     });

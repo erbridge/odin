@@ -1,5 +1,7 @@
 import Ember from 'ember';
-import DS from 'ember-data';
+import Model from 'ember-data/model';
+import attr from 'ember-data/attr';
+import { belongsTo, hasMany } from 'ember-data/relationships';
 
 // TODO: Generate this to allow for upward extension.
 const DAMAGE_MODIFIERS = [
@@ -29,37 +31,37 @@ const DAMAGE_MODIFIERS = [
   '+2d10+1d4'
 ];
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
+export default Model.extend({
+  name: attr('string'),
 
-  age:    DS.attr('number'),
-  gender: DS.attr('string'),
+  age:    attr('number'),
+  gender: attr('string'),
 
-  handedness: DS.attr('string'),
+  handedness: attr('string'),
 
-  frame:  DS.attr('string'),
-  height: DS.attr('number'),
-  weight: DS.attr('number'),
+  frame:  attr('string'),
+  height: attr('number'),
+  weight: attr('number'),
 
-  race:        DS.belongsTo('race'),
-  culture:     DS.belongsTo('culture'),
-  homeland:    DS.attr('string'),
-  socialClass: DS.belongsTo('social-class'),
-  title:       DS.attr('string'),
-  career:      DS.belongsTo('career'),
+  race:        belongsTo('race'),
+  culture:     belongsTo('culture'),
+  homeland:    attr('string'),
+  socialClass: belongsTo('social-class'),
+  title:       attr('string'),
+  career:      belongsTo('career'),
 
-  strength:     DS.attr('number', { defaultValue: 1 }),
-  constitution: DS.attr('number', { defaultValue: 1 }),
-  size:         DS.attr('number', { defaultValue: 1 }),
-  dexterity:    DS.attr('number', { defaultValue: 1 }),
-  intelligence: DS.attr('number', { defaultValue: 1 }),
-  power:        DS.attr('number', { defaultValue: 1 }),
-  charisma:     DS.attr('number', { defaultValue: 1 }),
+  strength:     attr('number', { defaultValue: 1 }),
+  constitution: attr('number', { defaultValue: 1 }),
+  size:         attr('number', { defaultValue: 1 }),
+  dexterity:    attr('number', { defaultValue: 1 }),
+  intelligence: attr('number', { defaultValue: 1 }),
+  power:        attr('number', { defaultValue: 1 }),
+  charisma:     attr('number', { defaultValue: 1 }),
 
-  skills:       DS.hasMany('skill'),
-  combatStyles: DS.hasMany('combat-style'),
+  skills:       hasMany('skill'),
+  combatStyles: hasMany('combat-style'),
 
-  notes: DS.attr('string'),
+  notes: attr('string'),
 
   actionPoints: Ember.computed('dexterity', 'intelligence', function() {
     const dexterity    = parseInt(this.get('dexterity') || 0);
