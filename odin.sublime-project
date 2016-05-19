@@ -8,5 +8,14 @@
         "tmp"
       ]
     }
-  ]
+  ],
+  "SublimeLinter":
+  {
+    "linters":
+    {
+      "eslint": {
+        "@disable": true
+      }
+    }
+  }
 }
