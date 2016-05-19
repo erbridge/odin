@@ -12,6 +12,7 @@ export default Ember.Route.extend({
       skill.set('ruleSet', this.currentModel);
 
       this.currentModel.get('skills').addObject(skill);
+      this.currentModel.save();
 
       this.transitionTo('skills.edit', skill);
     }
