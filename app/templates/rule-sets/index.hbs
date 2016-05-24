@@ -1,9 +1,9 @@
-{{#link-to 'rule-sets.new'}}new{{/link-to}}
-
 {{#each model as |ruleSet|}}
 
   {{#link-to 'rule-sets.edit' ruleSet}}{{ruleSet.id}}{{/link-to}}
 
 {{/each}}
+
+{{#link-to 'rule-sets.new' tagName='button'}}New Rule Set{{/link-to}}
 
 {{outlet}}
