@@ -15,3 +15,39 @@
   {{/x-select}}
 
 </label></div>
+
+<div class='characteristic'><label>first characteristic:
+
+  {{#x-select value=autosaveModel.characteristicA}}
+
+    {{#x-option}}not set{{/x-option}}
+
+    {{#each model.characteristicNames as |characteristicName characteristic|}}
+
+      {{#x-option value=characteristic}}{{characteristicName}}{{/x-option}}
+
+    {{/each}}
+
+  {{/x-select}}
+
+</label></div>
+
+<div class='characteristic'><label>second characteristic:
+
+  {{#x-select value=autosaveModel.characteristicB}}
+
+    {{#x-option}}not set{{/x-option}}
+
+    {{#each model.characteristicNames as |characteristicName characteristic|}}
+
+      {{#x-option value=characteristic}}{{characteristicName}}{{/x-option}}
+
+    {{/each}}
+
+  {{/x-select}}
+
+</label></div>
+
+<div class='bonus'>base bonus: {{input type='number' value=autosaveModel.baseBonus}}</div>
+
+<div class='description'>description: {{textarea value=autosaveModel.description}}</div>
