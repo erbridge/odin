@@ -10,4 +10,6 @@
 
 {{/each}}
 
+<div class='skill'>{{skill-select skillDefinitions=skillDefinitions selectSkill=(action (mut selectedSkill)) tagName='span'}} <button {{action 'addSkill'}}>Add Skill</button></div>
+
 <div class='skill'><button {{action 'createSkill'}}>New Skill</button></div>

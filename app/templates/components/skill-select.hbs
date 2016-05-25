@@ -1,23 +1,11 @@
-{{#each model as |skill|}}
+{{#x-select action='selectSkill'}}
 
-  <div class='skill'>
+  {{#x-option}}not set{{/x-option}}
 
-    {{#if editable}}
+  {{#each skillDefinitions as |skill|}}
 
-      {{#link-to 'skills.edit' skill}}{{skill.name}}{{/link-to}}
+    {{#x-option value=skill}}{{skill.name}}{{/x-option}}
 
-    {{else}}
+  {{/each}}
 
-      {{skill.name}}
-
-    {{/if}}
-
-  </div>
-
-{{/each}}
-
-{{#if editable}}
-
-  <div class='skill'><button {{action 'createSkill'}}>New Skill</button></div>
-
-{{/if}}
+{{/x-select}}
