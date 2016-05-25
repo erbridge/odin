@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import attr from 'ember-data/attr';
-import { belongsTo } from 'ember-data/relationships';
 
 export default Ember.Mixin.create({
   characteristicNames: [
@@ -12,8 +11,6 @@ export default Ember.Mixin.create({
     'power',
     'charisma'
   ],
-
-  ruleSet: belongsTo('rule-set'),
 
   name: attr('string'),
 

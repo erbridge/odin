@@ -7,9 +7,7 @@ describeModel(
   'Unit | Model | combat style definition',
   {
     // Specify the other units that are required for this test.
-    needs: [
-      'model:rule-set'
-    ]
+    needs: []
   },
   function() {
     // Replace this with your real tests.

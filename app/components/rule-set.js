@@ -10,8 +10,6 @@ export default Ember.Component.extend({
     createSkill() {
       const skill = this.get('store').createRecord('skill-definition');
 
-      skill.set('ruleSet', this.model);
-
       this.model.get('skills').addObject(skill);
       this.model.save();
 
