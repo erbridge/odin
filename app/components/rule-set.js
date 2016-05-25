@@ -2,11 +2,20 @@ import Ember from 'ember';
 import autosave from 'ember-autosave';
 
 export default Ember.Component.extend({
+  store: Ember.inject.service(),
+
   autosaveModel: autosave('model'),
 
   actions: {
     createSkill() {
-      this.sendAction('createSkill');
+      const skill = this.get('store').createRecord('skill-definition');
+
+      skill.set('ruleSet', this.model);
+
+      this.model.get('skills').addObject(skill);
+      this.model.save();
+
+      this.sendAction('editSkill', skill);
     }
   }
 });

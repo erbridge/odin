@@ -1,3 +1,13 @@
 <div class='name'><label>name: {{input type='text' value=autosaveModel.name}}</label></div>
 
-{{skill-select model=model.skills editable=true createSkill='createSkill'}}
+{{#each model.skills as |skill|}}
+
+  <div class='skill'>
+
+    {{#link-to 'skills.edit' skill}}{{skill.name}}{{/link-to}}
+
+  </div>
+
+{{/each}}
+
+<div class='skill'><button {{action 'createSkill'}}>New Skill</button></div>
