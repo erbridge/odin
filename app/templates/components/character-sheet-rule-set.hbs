@@ -1,0 +1,15 @@
+<div class='rule-set'><label>rule set:
+
+  {{#x-select value=model.ruleSet.content action=(action (mut autosaveModel.ruleSet))}}
+
+    {{#x-option}}not set{{/x-option}}
+
+    {{#each ruleSets as |ruleSet|}}
+
+      {{#x-option value=ruleSet}}{{ruleSet.name}}{{/x-option}}
+
+    {{/each}}
+
+  {{/x-select}}
+
+</label></div>

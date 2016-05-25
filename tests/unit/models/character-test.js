@@ -12,6 +12,7 @@ describeModel(
       'model:combat-style',
       'model:culture',
       'model:race',
+      'model:rule-set',
       'model:skill',
       'model:social-class'
     ]

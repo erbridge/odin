@@ -34,6 +34,8 @@ const DAMAGE_MODIFIERS = [
 export default Model.extend({
   name: attr('string'),
 
+  ruleSet: belongsTo('rule-set'),
+
   age:    attr('number'),
   gender: attr('string'),
 
