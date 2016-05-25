@@ -30,6 +30,11 @@ export default Ember.Component.extend({
         this.model.get('skills').addObject(skill);
         this.model.save();
       }
+    },
+
+    removeSkill(skill) {
+      this.model.get('skills').removeObject(skill);
+      this.model.save();
     }
   }
 });
