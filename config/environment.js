@@ -4,15 +4,22 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'odin',
     environment: environment,
-    firebase: 'https://odin.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
 
+    firebase: {
+      apiKey: 'AIzaSyDQeSbelSxOVNZqJpkd1jDrdPBxwmpYtRY',
+      authDomain: 'odin.firebaseapp.com',
+      databaseURL: 'https://odin.firebaseio.com',
+      storageBucket: 'firebase-odin.appspot.com',
+    },
+
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self'",
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
       'font-src': "'self'",
-      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com",
       'img-src': "'self'",
       'style-src': "'self'",
       'media-src': "'self'"
