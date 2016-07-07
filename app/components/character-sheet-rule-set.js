@@ -8,5 +8,5 @@ export default Ember.Component.extend({
 
   ruleSets: Ember.computed('store', function() {
     return this.get('store').findAll('rule-set');
-  }),
+  })
 });

@@ -13,7 +13,10 @@
   {
     "linters":
     {
-      "eslint": {
+      "jshint": {
+        "@disable": true
+      },
+      "jscs": {
         "@disable": true
       }
     }
