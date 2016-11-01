@@ -14,7 +14,7 @@
   },
   "repository": "erbridge/odin",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4"
   },
   "author": "Felix Laurie von Massenbach <felix@erbridge.co.uk> (http://erbridge.co.uk/)",
   "license": "MIT",
