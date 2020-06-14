@@ -39,7 +39,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
-    "emberfire": "2.0.0",
+    "emberfire": "2.0.2",
     "emberx-select": "2.1.2",
     "loader.js": "^4.0.1"
   }
